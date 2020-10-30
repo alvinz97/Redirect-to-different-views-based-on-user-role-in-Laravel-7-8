@@ -117,6 +117,14 @@
             #social-media-section .header {
                 padding: 18px 0;
             }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
         </style>
     </head>
     <body class="antialiased">
