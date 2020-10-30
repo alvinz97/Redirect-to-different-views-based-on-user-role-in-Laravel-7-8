@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
-Route::get('/seller/dashboard', [App\Http\Controllers\Seller\DashboardController::class, 'index']);
-Route::get('/buyer/dashboard', [App\Http\Controllers\Buyer\DashboardController::class, 'index']);
+Route::get('/admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware('role:0');;
+Route::get('/seller/dashboard', [App\Http\Controllers\Seller\DashboardController::class, 'index'])->middleware('role:1');;
+Route::get('/buyer/dashboard', [App\Http\Controllers\Buyer\DashboardController::class, 'index'])->middleware('role:2');;
